@@ -52,15 +52,16 @@ from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
 
 class MyLayout(BoxLayout):
-    def on_start(self):
-        self.root.ids.lr.on_press=on_press
-
-    def on_press(self):
-        self.ids.time.text='hello world'
+    pass
 
 class MainApp(App):
     def build(self):
         return MyLayout()
+    def on_start(self):
+        self.root.ids.lr.on_press=self.on_press
+
+    def on_press(self):
+        self.root.ids.time.text='hello world'
 MainApp().run()
 ```
 
